@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text</title>
+    <style>
+        body{
+            font-family: cursive;
+            background-color: coral;
+            color:white;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 100px;
+           text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Hi I'm Varun!</h2>
+    <h3></h3>
+    <!-- <h3>My Hobbies are </h3> -->
+
+    <script>
+        const hobbies =["Watching Web-Series","Playing Tennis","Traveling","Reading Books","Coding"];
+        let hobbiesIndex=0;
+        let characterIndex =0;
+
+        updateText();
+
+
+
+        function updateText(){
+            let h3El =document.querySelector("h3");
+            characterIndex++;
+            h3El.innerHTML=`
+                i like  ${hobbies[hobbiesIndex].slice(0,characterIndex)}
+            `;
+
+            if(characterIndex == hobbies[hobbiesIndex].length){
+                characterIndex =0;
+                hobbiesIndex++;
+            }
+            if(hobbiesIndex == hobbies.length){
+                hobbiesIndex=0;
+            }
+
+            setTimeout(updateText,300);
+        }
+
+
+
+    </script>
+</body>
+</html>
