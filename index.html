@@ -20,12 +20,17 @@
     
     <h2>Hi I'm Varun!</h2>
     <h3></h3>
+    <p></p>
     <!-- <h3>My Hobbies are </h3> -->
 
     <script>
         const hobbies =["Watching Web-Series","Playing Tennis","Traveling","Reading Books","Coding"];
         let hobbiesIndex=0;
         let characterIndex =0;
+
+
+        let str ="Brahmanaidu Margam";
+        let strIndex =0;
 
         updateText();
 
@@ -46,8 +51,22 @@
                 hobbiesIndex=0;
             }
 
-            setTimeout(updateText,300);
+            setTimeout(updateText,100);
+
+
+
+            
+
+            strIndex++;
+            let pEl = document.querySelector("p");
+
+            pEl.innerHTML =`${str.slice(0,strIndex)}`;
+
+            if(strIndex == str.length){
+                strIndex=0;
+            }
         }
+
 
 
 
